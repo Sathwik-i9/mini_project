@@ -91,4 +91,17 @@ df_insurance_silver = (
     df_insurance_raw
     .withColumn("policy_id", trim(col("policy_id")))
     .withColumn("insurance_provider", trim(col("insurance_provider")))
-    .withColumn("amount_covered", col("amount_covered").cast("dou
+    .withColumn("amount_covered", col("amount_covered").cast("double"))
+    .withColumn("claim_status", trim(col("claim_status")))
+    .withColumn("load_time", current_timestamp())
+)
+
+df_insurance_silver.write.mode("overwrite").format("delta").save(silver_insurance_path)
+
+spark.sql("""
+    CREATE TABLE IF NOT EXISTS insurance_silver
+    USING DELTA
+    LOCATION 'dbfs:/FileStore/Mini_Project/silver/insurance_silver'
+""")
+
+print("Silver Insurance Table Created Successfully.")
