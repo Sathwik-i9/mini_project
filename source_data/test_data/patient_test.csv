@@ -1,0 +1,9 @@
+patient_id,name,age,address,phone_number,bill_amount,insurance_provider,policy_id
+P001,John Doe,30,New York,12345,5000,Aetna,INS001
+P002,Mary Jane,25,San Francisco,99887,2000,Cigna,INS002
+P003,Peter Lee,40,Chicago,55555,6000,UHC,INS003
+P001,John Doe,30,Boston,12345,5000,Aetna,INS001
+P002,Mary Jane,25,San Francisco,99887,2500,Cigna,INS002
+P004,Lisa Ray,32,Miami,44444,3000,Aetna,INS004
+P003,Peter Lee,40,Chicago,55555,6000,UHC,INS003
+P001,John Doe,31,Boston,12345,5500,Aetna,INS001
